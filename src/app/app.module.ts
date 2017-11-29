@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { PersonalTrainingComponent } from './personal-training/personal-training.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import {BsDropdownModule, CarouselModule, CollapseModule} from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,11 +24,14 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     YogaComponent,
     CycleComponent,
     PersonalTrainingComponent,
-    ContactUsComponent
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
+    CarouselModule.forRoot(),
+    CollapseModule.forRoot(),
+    BsDropdownModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
       { path: 'zumba', component: ZumbaComponent},

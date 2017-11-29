@@ -1,3 +1,13 @@
-<p>
-  home works!
-</p>
+<div class="main-content">
+  <carousel>
+    <slide *ngFor="let image of images">
+      <img class="slide-img img-fluid" src="{{image.src}}" alt="{{image.alt}}">
+      <div class="carousel-caption text-color">
+        <h3>{{image.title}}</h3>
+        <blockquote>{{image.quote}}</blockquote>
+        <p>{{image.authorQuote}}</p>
+      </div>
+    </slide>
+  </carousel>
+
+</div>

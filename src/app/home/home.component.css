@@ -1,0 +1,22 @@
+slide {
+  width: 100vm;
+  height: 100vh;
+}
+
+slide img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.text-color {
+  color: #BA68C8;
+  font-size: larger;
+}
+
+.main-content {
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("../../assets/image/bg-1.jpg");
+  background-repeat: repeat;
+}
