@@ -15,8 +15,7 @@ slide img {
 }
 
 .main-content {
-  height: 100vh;
   overflow: hidden;
   background-image: url("../../assets/image/bg-1.jpg");
-  background-repeat: repeat;
+  background-position: center center;
 }

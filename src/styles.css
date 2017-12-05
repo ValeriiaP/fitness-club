@@ -3,4 +3,11 @@
 
 .main-content {
   margin-top: 55px;
+  height: 94vh;
+  overflow: hidden;
+}
+
+.item-content{
+  width: 33%;
+  padding: 20px;
 }

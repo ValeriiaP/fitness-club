@@ -2,44 +2,41 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ZumbaComponent } from './group-class/zumba/zumba.component';
-import { PilatesComponent } from './group-class/pilates/pilates.component';
-import { YogaComponent } from './group-class/yoga/yoga.component';
-import { CycleComponent } from './group-class/cycle/cycle.component';
-import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
-import { PersonalTrainingComponent } from './personal-training/personal-training.component';
+import { BsDropdownModule, CarouselModule, CollapseModule } from 'ngx-bootstrap';
+import { AgmCoreModule } from '@agm/core';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './core/navbar/navbar.component';
+import { FooterComponent } from './core/footer/footer.component';
+import { GroupClassComponent } from './group-class/group-class.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import {BsDropdownModule, CarouselModule, CollapseModule} from 'ngx-bootstrap';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    FooterComponent,
     HomeComponent,
-    ZumbaComponent,
-    PilatesComponent,
-    YogaComponent,
-    CycleComponent,
-    PersonalTrainingComponent,
     ContactUsComponent,
+    GroupClassComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyD4UdeZX_dJR6OY9OBkjVB6BLhX54fxDy4'
+    }),
     NgbModule.forRoot(),
     CarouselModule.forRoot(),
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
-      { path: 'zumba', component: ZumbaComponent},
-      { path: 'pilates', component: PilatesComponent},
-      { path: 'yoga', component: YogaComponent},
-      { path: 'cycle', component: CycleComponent},
-      { path: 'personal-training', component: PersonalTrainingComponent},
-      { path: 'contact-us', component: ContactUsComponent}
+      { path: 'group-class/:name', component: GroupClassComponent},
+      { path: 'contact-us', component: ContactUsComponent},
+      { path: '**', component: NotFoundComponent}
     ])
   ],
   providers: [],
